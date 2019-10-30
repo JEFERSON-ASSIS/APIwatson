@@ -5,6 +5,6 @@ const routes = express.Router();
 
 const watsonController = require("./app/controllers/watsonController");
 
-routes.post("/mensagem", watsonController.mensagem);
+routes.post("/mensagem/:workspaceID", watsonController.mensagem);
 
 module.exports = routes

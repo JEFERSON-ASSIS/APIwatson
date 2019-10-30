@@ -2,9 +2,10 @@ const watsonFunc = require('../functions/watsonFunctions')
 
 module.exports = {
   async mensagem(req, res) {
+    const { workspaceID} = req.params;
     const { text, context = {} } = req.body;
 
-    watsonFunc.mensagem(text, context)
+    watsonFunc.mensagem(workspaceID,text, context)
       .then((response)=>{
         res.json(response);
       })
